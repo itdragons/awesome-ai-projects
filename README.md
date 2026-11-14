@@ -1,4 +1,4 @@
-# Awesome AI Projects [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome AI Projects [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](LICENSE)
 
 > 精选值得关注的开源 AI 项目、Agent 框架与工程工具。
 

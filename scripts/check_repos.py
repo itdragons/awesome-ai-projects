@@ -15,10 +15,8 @@ from datetime import datetime, timezone
 README_PATH = os.path.join(os.path.dirname(__file__), "..", "README.md")
 GITHUB_API = "https://api.github.com/repos/{owner}/{repo}"
 
-# 忽略非项目仓库链接
-IGNORED_REPOS = {
-    "sindresorhus/awesome",
-}
+# 可选：需要忽略的仓库链接（如模板库或非收录项目）
+IGNORED_REPOS = set()
 
 def extract_github_repos(file_path):
     """从 markdown 中提取所有 GitHub 仓库 (owner, repo)"""
