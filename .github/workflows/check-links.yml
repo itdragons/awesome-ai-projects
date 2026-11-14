@@ -1,0 +1,28 @@
+name: Check Markdown Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # 每周一上午 8:00 (UTC 0:00) 自动巡检一次
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Lychee Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 检查 README.md 和 CONTRIBUTING.md 中的链接
+          args: --verbose --no-progress './README.md' './CONTRIBUTING.md'
+          # 如果发现死链则让 Action 标红失败
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

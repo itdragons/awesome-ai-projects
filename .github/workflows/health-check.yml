@@ -1,0 +1,29 @@
+name: Weekly Repo Health Check
+
+on:
+  schedule:
+    # 每周一上午 10:00 (UTC 2:00) 自动巡检
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # 支持在 GitHub Actions 页面手动一键触发
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Repo Inspector
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/check_repos.py
