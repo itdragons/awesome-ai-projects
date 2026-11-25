@@ -10,6 +10,7 @@
 
 ## Agent 编排与协作
 - [multica-ai/multica](https://github.com/multica-ai/multica) ![GitHub Stars](https://img.shields.io/github/stars/multica-ai/multica?style=social) - 开源的多 Agent 协作与项目管理平台，支持将多种编程 Agent 接入任务看板。
+- [pingdotgg/t3code](https://github.com/pingdotgg/t3code) ![GitHub Stars](https://img.shields.io/github/stars/pingdotgg/t3code?style=social) - 开源的 AI 编程 Agent 控制面与多端界面，支持跨端统一调度 Claude Code、Codex 等助手。
 
 ## 知识增强与 RAG
 <!-- 待补充 -->
